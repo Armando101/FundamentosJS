@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manejo de fechas</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	function diasEntreFechas(fecha1,fecha2) {
+		const unDia=1000*60*60*24	//Milisegunos que hay en un dia
+		const diferencia=Math.abs(fecha1-fecha2)	// Nos va a dar un numero en milisegundos que es el numero que existe entre ambas fechas
+
+		return Math.floor(diferencia/unDia)	// Regresa los dias que hay entre fechas
+	}
+
+	const hoy = new Date()	// Regresa la fecha actual
+	const nacimiento=new Date(1997, 7,29)	// Regresa la fecha que le estamos pasando como parametro, para los meses Enero =0, Febrero=1, ...,  Agosto=7
+
+	console.log(diasEntreFechas(hoy,nacimiento))
+</script>
+</html>

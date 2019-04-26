@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Memorizacion</title>
+</head>
+<body>
+<script type="text/javascript">
+	function factorial(n) {
+		if (!this.cache) {	// Si no existe cache, lo crea
+			this.cache={}
+		}
+
+		if (this.cache[n]) {	// Si ya existe el cache para n, lo regresa sin hacer calculos
+			return this.cache[n]
+		}
+
+		// Funcion recursiva	
+		// Se ejecuta si no existe cache para n
+		if (n===1) {
+			return 1
+		}
+		this.cache[n]=n*factorial(n-1)	// En esta linea se crea el cache para n y todos los numeros anteriores a n, los guarda en un arreglo para que la proxima vez que se requiera usarlo ya no se tenga que volver a calcular todo
+		return this.cache[n]
+		// return n*factorial(n-1)
+	}
+
+	console.log(factorial(6))
+</script>
+</body>
+</html>

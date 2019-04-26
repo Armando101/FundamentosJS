@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diferencias entre var, let y const</title>
+</head>
+<body>
+<!--
+var - let - const
+
+• Cuando declaramos variables con ‘var’ siempre conviene declararlas ‘arriba’ del código en el que sea claro cuáles van a ser las variables que se van a usar dentro de nuestra función o programa.
+
+• Dentro de una función javascript detecta todas las variables declaradas con ‘var’ y las ‘declara’ por sí solo como si estuvieran ‘arriba’ en el código. Por lo que si se declara un var dentro de un bloque else y este no es accedido por el condicional, la variable ‘var’ declarada dentro de ese else existe de todas maneras.
+
+• Si utilizamos ‘let’, el alcance de esa variable se ve reducido únicamente al bloque de código donde es utilizado.
+
+• ‘const’ se comporta parecido a let sólo que no es posible reasignarlo.
+
+• Es posible modificar una variable ‘const’ en el caso de un array[ ] con el método push() por ejemplo.
+
+• Reducir siempre al mínimo el alcance de nuestras variables.
+
+• Utilizar 'let’ si tenemos que reasignar una variable.
+
+• Si nunca tenemos que reasignar una variable usamos ‘const’
+-->
+</body>
+<script type="text/javascript">
+	var armando={
+		nombre:'Armando',
+		apellido:'Rivera',
+		edad:21
+	}
+
+	function esMayorDeEdad(persona) {
+	var mensaje
+	if (persona.edad>18) {
+	//	var mensaje='Es mayor de edad'	// Por buena practica no declaramos variables dentro de bloques de codigo, esto no nos manda error y funciona correctamente porque JS lo que hace es poner la declaracion de la variable hasta arriba de nuestro codigo, tal y como esta hecho en esta parte
+		mensaje='Es mayor de edad'
+	} else {
+	//	var mensaje='No es mayor de edad'
+		mensaje='No es mayor de edad'
+	}
+	console.log(mensaje)
+	}
+	esMayorDeEdad(armando)
+
+	function esMayorDeEdad2(persona) {
+	if (persona.edad>18) {
+		let mensaje='Es mayor de edad'	// Esto nos marca error ya que el alcance de let solo es en el bloque de codigo en el que se encuentra
+	} else {
+		let mensaje='No es mayor de edad'
+	}
+	console.log(mensaje)
+	}
+
+	function esMayorDeEdad3(persona) {
+	let mensaje
+	const MAYOR_DE_EDAD=18	// Esta es una variable constante
+	// MAYOR_DE_EDAD=19	// Si intentamos reasignar la variable constante nos maraca un error
+	if (persona.edad>MAYOR_DE_EDAD) {
+		mensaje='Es mayor de edad'
+	} else {
+	//	var mensaje='No es mayor de edad'
+		mensaje='No es mayor de edad'
+	}
+	console.log(mensaje)
+	}
+	esMayorDeEdad3(armando)
+
+	for (var i = 0; i<10; i++) {
+	}
+
+	console.log(`El programa termino y el valor de i es`, {i})
+	// La sentencia anterior funciona porque i esta declarado como var, si lo hubieramos declarado como let no funcionaria, solo en el for.
+
+	//Conclusion:
+	// Es mejor usar let y const pero no var, esto porque nos ayuda a evitar bugs y reasignaciones que enrealidad no queriamos hacer.
+</script>
+</html>

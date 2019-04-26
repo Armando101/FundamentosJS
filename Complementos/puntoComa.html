@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuando poner punto y coma y cuando no</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	/*
+		Utilizar punto y coma en JS es opcional excepto en algunos casos.
+		
+	    Cuando usamos varias instrucciones en una mísma línea
+    	Al comenzar la próxima línea con un array
+    	Al comenzar la próxima línea con un template string
+
+	*/
+
+		// Opcional
+	alert('Hola Mundo')
+	var nombre = 'Armando'
+	const saludar=function function_name(argument) {
+
+	}
+
+	// Es 100% innecesario usar punto y coma al final de las llaves de un bloque de codigo
+
+	for (var i = 0; i < 10; i++) {
+	
+	};	// <-- punto y coma totalmente innecesario
+
+	/****************** Casos necesarios ****************************/
+
+	console.log('Mi nombre es Armando');	// Cuando la siguiente linea comienza con un array
+	[1,2,3].forEach(n=> console.log(n*2))
+
+	const apellido = 'Rivera'
+	console.log('Hola mi nombre es Armando'); // Cuando la siguiente linea es un string
+	`${apellido} es un desarrollador`
+
+	function calcularDoble(numero) {
+		return {original: numero, doble: numero*2}
+
+		return	// Si damos un enter despues de un return es como si le pusieramos punto y coma en seguida del return (return;) y nos arrojara un error
+			{
+				original: numero, doble: numero*2
+			}
+	}
+
+</script>
+</html>

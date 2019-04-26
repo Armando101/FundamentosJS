@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recurividad</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+	/*
+		13 /_4__
+
+		13-4=9		1
+		9-4=5		1
+		5-4=1		1
+		1-4=-3		0
+		-------------
+		Total		3
+	*/
+
+	function divisionEntera(dividiendo, divisor) {
+		if (dividiendo<divisor) {
+			return 0
+		}
+		return 1+divisionEntera(dividiendo-divisor, divisor)
+	}
+	console.log(divisionEntera(13,4))
+	console.log(divisionEntera(30,3))
+</script>
+</html>

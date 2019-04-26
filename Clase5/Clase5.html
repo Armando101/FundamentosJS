@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clase4-Asincronismo</title>
+</head>
+<body>
+	<script src="Clase5.js"></script>
+	<script>
+		console.log('a')
+		//setTimeout(() => console.log('b'),2000)	//Ejecuta la función dos segundos después
+		setTimeout(() => console.log('b'),0)	// Imprime la b después de la f, esto porque lo que hace JS es mandar la función al navegador, éste lo coloca en una pila de tareas y se va a ejecutar dentro de cero segundos después de que el termine el programa principal de JS
+		console.log('c')
+		console.log('d')
+		console.log('e')
+		console.log('f')
+	</script>
+</body>
+</html>

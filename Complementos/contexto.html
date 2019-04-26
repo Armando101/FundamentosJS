@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cambiando el contexto al llamar a una funcion</title>
+</head>
+<body>
+<script type="text/javascript">
+	const armando={
+		nombre:'Armando',
+		apellido:'Rivera',
+		edad: 21
+	}
+
+	const yesika={
+		nombre:'Yesika',
+		apellido:'Cortes'
+	}
+
+	function saludar(saludo='Hola') {
+		console.log(`${saludo}, mi nombre es ${this.nombre}`)	// Si se ejecuta sin parametros this hace referencia a window
+	}
+
+	const saludarArmando=saludar.bind(armando)
+	// Lo que hace bind es devolver una nueva funcion atando el parametro que le pasamos (armando) al this dentro de la funcion
+
+	const saludarAYesika=saludar.bind(yesika)	
+
+	saludarArmando()
+	saludarAYesika()
+	saludar() 
+
+	setTimeout(saludar.bind(armando), 1000)	// De esta fomra no declaramos una funcion exolicita para cada persona
+	setTimeout(saludar.bind(armando,'Khe tranza karnal'), 1000)	// REcibe como primer parametro el objeto que quiero atar al this, y como segundo parametro el saludo
+
+	/******************** Metodos para llamar a la funcion con un this especifico ******************/
+
+	saludar.call(yesika)	// Llama autmoaticamente a la funcion
+	saludar.bind(yesika)	// Esto no hace nada
+
+	saludar.call(yesika, 'Yhea Yhea la muñeca fea')
+
+	saludar.apply(armando, ['Yupy Yupy el muñeco chucky'])	// A diferencia del call, con apply los parametros se pasan en un array
+</script>
+</body>
+</html>

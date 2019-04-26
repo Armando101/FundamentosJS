@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clourses</title>
+</head>
+<body>
+<!--Un closure es una función que recuerda el estado de las cosas cuando fue creada.
+Una función que devuelve otra función con parámetros invocados en dos veces; primero el de la función ‘padre’ y luego el de la función ‘hijo’.-->
+
+<script type="text/javascript">
+
+	// Esta funcion recuerda el argumeto finalDeFrase que ya le habiamos pasado en la funcion crearSaludo, regresa una funcion y esta se asigna a las variables saludoArgentino, saludoMexicano y saludoColombiano, estas nuevas funciones reciben el nombre y regresan el console.log
+	function crearSaludo(finalDeFrase) {
+		return function (nombre) {
+			console.log(`Hola ${nombre} ${finalDeFrase}`)
+		}
+	}
+
+	const saludoArgentino=crearSaludo('che')
+	const saludoMexicano=crearSaludo('Karnal')
+	const saludoColombiano=crearSaludo('Parse')
+
+	// Estos saludos son la funcion que regresa crearSaludo, 
+	saludoArgentino('Armando')
+	saludoMexicano('Armando')
+	saludoColombiano('Armando')
+</script>
+</body>
+</html>

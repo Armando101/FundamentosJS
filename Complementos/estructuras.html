@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Estructuras de datos inmutables</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	const armando={
+		nombre:'Armando',
+		apellido:'Rivera',
+		edad: 21
+	}
+
+	const cumpleanos=persona=>persona.edad++	// Si hacemos esto, nos va a estar modificando los datos de nuestra estructura cada vez que sea ejecutada
+	const cumpleanosInmutable=persona=>({
+		...persona, // Lo que hacemos aqui es crear un nuevo objeto con todos los atributos del objeto que esta siendo pasado como parametro
+		edad:persona.edad+1
+		// Nos crea un nuevo objeto persona con los mismos atributos a excepcion que la edad se incrementa en 1 en el nuevo objeto
+	})
+</script>
+</html>
