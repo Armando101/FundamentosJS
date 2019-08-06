@@ -11,10 +11,10 @@ Las promesas tienen tres estados
 
 3) Estado rejected: La promesa pasa a este estado si no se resuelve correctamente
 
-Las promesas no siempre trabajan de manera ascincron.
+Las promesas no siempre trabajan de manera ascincrona.
 Las promesas pueden trabajar de manera sincrona.
 Para obtener el valor de la resolución de la promesa podemos llamar a la función .then(val => ...)
-Dicha función recibe como parámetro otra función y ésta debeulve el valor que nosotros esperabamos, en cambio si secede algun error al resolver la promesa podemos hacer un .catch(err => ...) ésta recibe otra función la cual debuelve el error que sucedió.
+Dicha función recibe como parámetro otra función y ésta debeulve el valor que nosotros esperabamos, en cambio si sucede algun error al resolver la promesa podemos hacer un .catch(err => ...) ésta recibe otra función la cual debuelve el error que sucedió.
 
 Sintaxis:
 new Promise(function(resolve, reject){

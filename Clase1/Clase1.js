@@ -43,7 +43,7 @@ edad += 1
 var peso = 80
 peso -= 5
 
-// JS es muy inpreciso con los decimales
+// JS es muy impreciso con los decimales
 
 var precio = 200.3
 var total = precio*3
@@ -58,7 +58,7 @@ var personas = 2
 var porciones = pizza/personas
 
 
-/////////////////////////////////////////// Funciones //////////////////////////////////////////////
+/////////////////////////////////////////// Funciones //////////////////////////////////////////
 
 // Las funciones se definen con la palabra reservada function
 // De esta forma declaramos una funcion
@@ -72,7 +72,7 @@ function imprimirEdad(nom, ed) {
 imprimirEdad(nombre, edad)
 imprimirEdad("Adriana", "21")
 
-///////////////////////////////////////// Ojetos ////////////////////////////////////////////////
+///////////////////////////////////////// Objetos ////////////////////////////////////////////////
 
 // Los objetos en JS se declaran con llaves
 
@@ -133,10 +133,10 @@ imprimirNombreYEdad(Armando)
 imprimirNombreYEdad(Dario)
 
 
-/////////////////////////////////// Parametros como referencia y como valor ////////////////////////
+/////////////////////////////////// Parametros como referencia y como valor //////////////////////
 
 // Paso por referencia
-// Si le pasamos un objeto a una funcion y operamos sobre un atributo de dicho objeto se le conoce como paso por referencia y los atributos que modifiquemos dentro de la funcion se veran afectados en el objto
+// Si le pasamos un objeto a una funcion y operamos sobre un atributo de dicho objeto se le conoce como paso por referencia y los atributos que modifiquemos dentro de la funcion se verán afectados en el objeto
 
 function cumpleanosRef(persona) {
 	persona.edad +=1

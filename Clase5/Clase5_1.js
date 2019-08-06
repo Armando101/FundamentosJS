@@ -10,6 +10,11 @@ const PEOPLE_URL = 'people/:id'
 
 // Como segundo parametro le indicamos que va a hacer una peticion a otra pagina
 
+// Para poder hacer un request vamos a llamar al metodo "$.get", este método nos permite hacer request y recibe verios parámetros.
+
+// El primer parámetro es la URL a la cual queremos acceder.	`${API_URL}${PEOPLE_URL.replace(':id', 2)}`
+// El segundo parámetro que necesitamos es indicarle a JQuery que el request se va a hacer hacia otra página. Le pasamos como parámetro el siguiente objet o. {crossDomain:true}
+
 //	$.get(`${API_URL}${PEOPLE_URL.replace(':id', 2)}`, {crossDomain:true})
 
 // Otra forma de poner la linea anterior es la siguiente
@@ -23,7 +28,7 @@ const onPeopleResponse = function (persona) {
 $.get(LukeUrl, opts, onPeopleResponse)
 
 
-// Por ultimo colocamos nuestro callback
+// Por ultimo colocamos nuestro callback como tercer parámetro (onPeopleResponse)
 //callback: Una funcion que se va a ejecutar en algun futuro pero no sabemos cuando, $.get() se va a encargar de ejecutarla cuando termine el request. Tambien puede suceder que el request nunca se ejecute y la funcion nunca se llame, pero lo que tenemos que entender es que la funcion $.get() puede ejecutarse o no.
 
 
@@ -39,6 +44,7 @@ $.get(LukeUrl, opts, onPeopleResponse)
 function obtenerPersonaje(id) {
 	const url = `${API_URL}${PEOPLE_URL.replace(':id',id)}`
 	$.get(url, opts, onPeopleResponse)
+	console.log("Ya terminó la ejecución")
 }
 
 // Aqui tenemos un ejemplo del ascincronismo de JS, le mandamos los personajes en un cierto orden y nos lo muestra en otro

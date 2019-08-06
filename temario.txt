@@ -1,0 +1,6 @@
+Clase 1: Fundamentos: Variables, funciones, objetos, parámetros como referencia o valor.
+Clase 2: Estructuras de control y funciones: Condicionales, funciones que retornan valores, Arrow functions, Estructuras repetitivas, condiciones múltiples.
+Clase 3: Arrays: Filtrar un array, transformar un array, Reducir un array a un valor.
+Clase 4: Programación orientada a objetos: Clases en JS, contexto this.
+Clase 5: Asincronismo: Funciones como parámetros, Callbacks, request, promesas, promesas en paralelo, Async-await.
+Complememtos: var, let y const, Funciones recursivas, memorización, Estructuras inmutables, Cambiando el contexto, Punto y coma.
